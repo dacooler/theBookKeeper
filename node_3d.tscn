@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://d4fsqvo6kkhd4" path="res://character_body_3d.gd" id="1_a202f"]
 
+[sub_resource type="Environment" id="Environment_a202f"]
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a0tk4"]
@@ -11,6 +15,9 @@ size = Vector3(100, 1, 100)
 size = Vector3(100, 1, 100)
 
 [node name="Node3D" type="Node3D" unique_id=1070173309]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1523260978]
+environment = SubResource("Environment_a202f")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=101620679]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2178957, 0)
@@ -33,4 +40,4 @@ mesh = SubResource("BoxMesh_a0tk4")
 shape = SubResource("BoxShape3D_r3fl7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1585581584]
-transform = Transform3D(1, 0, 0, 0, 0.051795617, 0.9986577, 0, -0.9986577, 0.051795617, 0, 5.4032354, 0)
+transform = Transform3D(1, 0, 0, 0, 0.051795617, 0.9986577, 0, -0.9986577, 0.051795617, 0, 5.5887833, 0)
