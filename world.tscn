@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://da7niy6mlgwe7" path="res://assets/terrain/wall_1.tscn" id="5_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://dou55ei6jwos7" path="res://assets/terrain/roof.tscn" id="6_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://bhqw08hjg5kpl" path="res://assets/reciept.tscn" id="7_pkg7o"]
+[ext_resource type="Script" uid="uid://btpgkjfvhrku3" path="res://node.gd" id="8_ioo17"]
+[ext_resource type="AudioStream" uid="uid://baqxfsdlafwlo" path="res://assets/sounds/bookkeep.wav" id="9_wse8f"]
 
 [sub_resource type="Environment" id="Environment_a202f"]
 sdfgi_enabled = true
@@ -135,3 +137,11 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9243152, 1.7572684, 0.41137087)
 
 [node name="Node" type="Node" parent="." unique_id=1458744958]
+script = ExtResource("8_ioo17")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node" unique_id=2114996157]
+stream = ExtResource("9_wse8f")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Node" unique_id=1816693046]
+stream = ExtResource("9_wse8f")
+volume_db = -80.0
