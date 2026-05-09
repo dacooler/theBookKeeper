@@ -4,6 +4,7 @@ extends Node
 @onready var intense = $AudioStreamPlayer2
 
 # Called when the node enters the scene tree for the first time.
+
 func highIntense():
 	intense.volume_db = 0
 	music.volume_db = -80
