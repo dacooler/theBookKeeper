@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bv736vo6dbpm" path="res://assets/kvitto1.jpg" id="2_6bkvn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdjck"]
+cull_mode = 2
 albedo_texture = ExtResource("2_6bkvn")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_i5arm"]
@@ -21,3 +22,5 @@ mesh = SubResource("PlaneMesh_i5arm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1475077023]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1116488, 0)
 shape = SubResource("SphereShape3D_wc5p8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

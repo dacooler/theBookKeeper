@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@onready var music_player: Node = $"../Node"
+
 enum EnemyState {
 	IDLE,
 	TURNING,
@@ -50,6 +52,7 @@ func _process_chasing():
 	const CHASING_RANGE := 10.0;
 	if (position.distance_to(chasingTarget.position) > CHASING_RANGE):
 		_start_ideling();
+		music_player.lowIntense();
 		return;
 
 	rotationTarget = chasingTarget.position - position;
@@ -71,6 +74,7 @@ func _start_walking():
 
 func _start_chasing(body):
 	chasingTarget = body;
+	music_player.highIntense();
 	state = EnemyState.CHASING;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

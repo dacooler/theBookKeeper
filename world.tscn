@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://chu80r5ddr7p5"]
 
-[ext_resource type="Script" uid="uid://d4fsqvo6kkhd4" path="res://scripts/player.gd" id="1_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://7pnda5m6o41k" path="res://assets/player.tscn" id="1_wse8f"]
 [ext_resource type="PackedScene" uid="uid://crm5uxlc1okbj" path="res://assets/enemy.tscn" id="2_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://b7jvp5a3fonf4" path="res://assets/terrain/floor.tscn" id="3_ioo17"]
 [ext_resource type="PackedScene" uid="uid://s5dq3q38txw" path="res://assets/officeStuff/plant.tscn" id="4_wse8f"]
@@ -11,27 +11,19 @@
 [ext_resource type="Script" uid="uid://btpgkjfvhrku3" path="res://node.gd" id="8_ioo17"]
 [ext_resource type="PackedScene" uid="uid://bqxmp0mqyqjpu" path="res://assets/officeStuff/water.tscn" id="8_k3n1d"]
 [ext_resource type="AudioStream" uid="uid://baqxfsdlafwlo" path="res://assets/sounds/bookkeep.wav" id="9_wse8f"]
+[ext_resource type="AudioStream" uid="uid://bahkwic07cjcr" path="res://assets/sounds/Bookkeepingontherun.wav" id="10_wse8f"]
 
 [sub_resource type="Environment" id="Environment_a202f"]
 sdfgi_enabled = true
 sdfgi_use_occlusion = true
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
 
 [node name="Node3D" type="Node3D" unique_id=1070173309]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1523260978]
 environment = SubResource("Environment_a202f")
 
-[node name="Player" type="CharacterBody3D" parent="." unique_id=101620679 groups=["player"]]
+[node name="Player" parent="." unique_id=1466024363 instance=ExtResource("1_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2178957, 0)
-script = ExtResource("1_pkg7o")
-
-[node name="Camera3D" type="Camera3D" parent="Player" unique_id=1176611965]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4681077, -0.06657028)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=816782448]
-shape = SubResource("CapsuleShape3D_noarx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1585581584]
 transform = Transform3D(1, 0, 0, 0, 0.051795617, 0.9986577, 0, -0.9986577, 0.051795617, 0, 2.2397714, 0)
@@ -209,6 +201,6 @@ stream = ExtResource("9_wse8f")
 autoplay = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Node" unique_id=1816693046]
-stream = ExtResource("9_wse8f")
+stream = ExtResource("10_wse8f")
 volume_db = -80.0
 autoplay = true

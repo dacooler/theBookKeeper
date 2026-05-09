@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byr38x3ge132j"
-path.s3tc="res://.godot/imported/kvitto2.jpg-a67b28df14bedb46c678858d83d87014.s3tc.ctex"
+uid="uid://dxtvg3kh2tjco"
+path.s3tc="res://.godot/imported/folder.png-929226a3d2aabd1e45220f9adf054197.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/kvitto2.jpg"
-dest_files=["res://.godot/imported/kvitto2.jpg-a67b28df14bedb46c678858d83d87014.s3tc.ctex"]
+source_file="res://assets/folder.png"
+dest_files=["res://.godot/imported/folder.png-929226a3d2aabd1e45220f9adf054197.s3tc.ctex"]
 
 [params]
 

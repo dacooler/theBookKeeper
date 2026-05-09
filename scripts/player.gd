@@ -1,13 +1,31 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 20.0
 const JUMP_VELOCITY = 4.5
 const mouse_sensitivity = 0.002
+
 var yaw = 0.0
-var pitch = 0.0
+var pitch = 0.
+var receipts := 0;
+var acceleration := Vector3.ZERO;
 
 @onready var camera = $Camera3D
+@onready var folder: MeshInstance3D = $folder
+const RECEIPT_FOR_FOLDER = preload("uid://c12yoxkvr8tvr")
+var receipts_in_folder: Array[Node3D] = [];
+
+func collect_recipt():
+	receipts += 1;
+	var receipt: Node3D = RECEIPT_FOR_FOLDER.instantiate();
+	folder.add_child(receipt);
+	receipts_in_folder.append(receipt);
+
+	receipt.position.y += 1;
+
+func use_recipt():
+	receipts -= 1;
+	receipts_in_folder.pop_back().queue_free();
 
 func _ready():
 	# Capture the mouse for first-person control
@@ -21,11 +39,12 @@ func _input(event):
 
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	acceleration = Vector3.ZERO;
 
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		acceleration += Vector3.UP * get_gravity();
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -36,10 +55,16 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("left", "right", "forward", "back")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		acceleration += direction * SPEED;
 
+	if Input.is_action_just_pressed(&"crouch") && receipts > 0:
+		const DASH_SPEED := 50;
+		use_recipt();
+		velocity += transform.basis * Vector3.FORWARD * DASH_SPEED;
+
+	velocity += acceleration * delta;
 	move_and_slide()
+
+	const DECAY_SPEED = -3;
+	velocity.x *= exp(DECAY_SPEED * delta);
+	velocity.z *= exp(DECAY_SPEED * delta);
