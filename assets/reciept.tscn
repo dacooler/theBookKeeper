@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bhqw08hjg5kpl"]
+
+[ext_resource type="Script" uid="uid://h5xisprotq11" path="res://scripts/reciept.gd" id="1_fdjck"]
+[ext_resource type="Texture2D" uid="uid://bv736vo6dbpm" path="res://assets/kvitto1.jpg" id="2_6bkvn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdjck"]
+albedo_texture = ExtResource("2_6bkvn")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i5arm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wc5p8"]
+
+[node name="reciept" type="Area3D" unique_id=2079881988]
+script = ExtResource("1_fdjck")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1389821379]
+transform = Transform3D(0.2, 0, 0, 0, -4.371139e-08, -0.4, 0, 1, -1.7484556e-08, 0, 0.05014229, 0)
+material_override = SubResource("StandardMaterial3D_fdjck")
+mesh = SubResource("PlaneMesh_i5arm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1475077023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1116488, 0)
+shape = SubResource("SphereShape3D_wc5p8")

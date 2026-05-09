@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://da7niy6mlgwe7"]
+
+[ext_resource type="Texture2D" uid="uid://bh5y5jecht0wh" path="res://assets/terrain/wall2.jpg" id="1_e4f8i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4emjj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_korcy"]
+albedo_texture = ExtResource("1_e4f8i")
+
+[sub_resource type="BoxMesh" id="BoxMesh_cdrql"]
+
+[node name="wall1" type="Node3D" unique_id=870301923]
+transform = Transform3D(10, 0, 0, 0, 4, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1191322076]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=218560930]
+shape = SubResource("BoxShape3D_4emjj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=994291856]
+material_override = SubResource("StandardMaterial3D_korcy")
+mesh = SubResource("BoxMesh_cdrql")

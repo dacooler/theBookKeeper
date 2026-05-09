@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://chu80r5ddr7p5"]
+
+[ext_resource type="Script" uid="uid://d4fsqvo6kkhd4" path="res://scripts/player.gd" id="1_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://crm5uxlc1okbj" path="res://assets/enemy.tscn" id="2_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://b7jvp5a3fonf4" path="res://assets/terrain/floor.tscn" id="3_ioo17"]
+[ext_resource type="PackedScene" uid="uid://s5dq3q38txw" path="res://assets/officeStuff/plant.tscn" id="4_wse8f"]
+[ext_resource type="PackedScene" uid="uid://da7niy6mlgwe7" path="res://assets/terrain/wall_1.tscn" id="5_ic0uy"]
+[ext_resource type="PackedScene" uid="uid://dou55ei6jwos7" path="res://assets/terrain/roof.tscn" id="6_k3n1d"]
+[ext_resource type="PackedScene" uid="uid://bhqw08hjg5kpl" path="res://assets/reciept.tscn" id="7_pkg7o"]
+
+[sub_resource type="Environment" id="Environment_a202f"]
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
+
+[node name="Node3D" type="Node3D" unique_id=1070173309]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1523260978]
+environment = SubResource("Environment_a202f")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=101620679 groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2178957, 0)
+script = ExtResource("1_pkg7o")
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=1176611965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4681077, -0.06657028)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=816782448]
+shape = SubResource("CapsuleShape3D_noarx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1585581584]
+transform = Transform3D(1, 0, 0, 0, 0.051795617, 0.9986577, 0, -0.9986577, 0.051795617, 0, 2.2397714, 0)
+
+[node name="Enemy" parent="." unique_id=503778989 instance=ExtResource("2_gbfbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7977533, 1.0224121, 1.7697182)
+
+[node name="floor" parent="." unique_id=14097517 instance=ExtResource("3_ioo17")]
+
+[node name="plant" parent="floor" unique_id=2135420923 instance=ExtResource("4_wse8f")]
+transform = Transform3D(0.18058999, 0.13351999, 0, 5.8363443e-09, -7.893839e-09, 0.22458999, 0.13351999, -0.18058999, -9.81714e-09, -2.6151452, -0.06315309, 2.9648979)
+
+[node name="plant2" parent="floor" unique_id=2011838902 instance=ExtResource("4_wse8f")]
+transform = Transform3D(0.18058999, 0.13351999, 0, 5.8363443e-09, -7.893839e-09, 0.22458999, 0.13351999, -0.18058999, -9.81714e-09, -12.274902, -0.063153565, -1.4961123)
+
+[node name="plant3" parent="floor" unique_id=266745246 instance=ExtResource("4_wse8f")]
+transform = Transform3D(0.18058999, 0.13351999, 0, 5.8363443e-09, -7.893839e-09, 0.22458999, 0.13351999, -0.18058999, -9.81714e-09, 3.702544, -0.06315309, -3.93961)
+
+[node name="wall1" parent="." unique_id=870301923 instance=ExtResource("5_ic0uy")]
+transform = Transform3D(19.895, 0, 0, 0, 4, 0, 0, 0, 0.1, -7.2725453, 1.6521306, -2.277927)
+
+[node name="wall2" parent="." unique_id=1392353629 instance=ExtResource("5_ic0uy")]
+transform = Transform3D(-4.371139e-07, 0, 0.1, 0, 4, 0, -10, 0, -4.371139e-09, 2.7344165, 1.6792393, 2.7689023)
+
+[node name="wall3" parent="." unique_id=382824518 instance=ExtResource("5_ic0uy")]
+transform = Transform3D(19.705, 0, 0, 0, 4, 0, 0, 0, 0.1, -7.1866574, 1.6792383, 7.342935)
+
+[node name="wall4" parent="." unique_id=761874164 instance=ExtResource("5_ic0uy")]
+transform = Transform3D(-4.371139e-07, 0, -0.1, 0, 4, 0, 10, 0, -4.371139e-09, -16.898567, 1.6792374, 2.6283565)
+
+[node name="roof" parent="." unique_id=312619683 instance=ExtResource("6_k3n1d")]
+transform = Transform3D(200, 0, 0, 0, 0.1, 0, 0, 0, 200, -12.274902, 3.633048, -1.4961123)
+visible = false
+
+[node name="reciept" parent="." unique_id=2079881988 instance=ExtResource("7_pkg7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9243152, 1.7572684, 0.41137087)

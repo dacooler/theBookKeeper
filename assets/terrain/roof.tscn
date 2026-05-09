@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dou55ei6jwos7"]
+
+[ext_resource type="Texture2D" uid="uid://d1t8fon6b0lan" path="res://assets/terrain/roof.jpg" id="1_12epp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5k8bc"]
+albedo_texture = ExtResource("1_12epp")
+uv1_scale = Vector3(100, 100, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jsk3o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4arys"]
+
+[node name="roof" type="Node3D" unique_id=312619683]
+transform = Transform3D(200, 0, 0, 0, 0.1, 0, 0, 0, 200, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=274305079]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=752047913]
+material_override = SubResource("StandardMaterial3D_5k8bc")
+mesh = SubResource("BoxMesh_jsk3o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=72131550]
+shape = SubResource("BoxShape3D_4arys")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bs1hyqc1d6b5r"]
+
+[node name="Hemi_002" type="Node3D" unique_id=1003373055]
+transform = Transform3D(-0.40446, 0, 0, 0, 0.40446, 0, 0, 0, -0.40446, 0, 0, 0)
+
+[node name="Hemi_0022" type="Node3D" parent="." unique_id=302042057]

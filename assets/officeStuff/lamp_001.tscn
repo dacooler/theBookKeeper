@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cx3k6di3vk4bt"]
+
+[node name="Lamp_001" type="Node3D" unique_id=221917893]
+transform = Transform3D(0.3431, 0.18128, -0.11408, -0.21229, 0.25925, -0.22651, -0.0284, 0.25202, 0.31507, 0, 0, 0)
+
+[node name="Lamp_0012" type="Node3D" parent="." unique_id=39429625]

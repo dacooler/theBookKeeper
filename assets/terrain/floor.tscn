@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b7jvp5a3fonf4"]
+
+[ext_resource type="Texture2D" uid="uid://dtauvqhrx1ery" path="res://assets/terrain/floor.jpg" id="1_r3f16"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1pdl6"]
+size = Vector3(100, 0.1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3f16"]
+albedo_texture = ExtResource("1_r3f16")
+uv1_scale = Vector3(100, 100, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1pdl6"]
+
+[node name="floor" type="Node3D" unique_id=14097517]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=589435110]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.42076206, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=699153249]
+shape = SubResource("BoxShape3D_1pdl6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1451429152]
+transform = Transform3D(100, 0, 0, 0, 0.1, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_r3f16")
+mesh = SubResource("BoxMesh_1pdl6")

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://crm5uxlc1okbj"]
+
+[ext_resource type="Script" uid="uid://7btq4ewh1doi" path="res://scripts/enemy.gd" id="1_qi2p4"]
+[ext_resource type="ArrayMesh" uid="uid://c6yrf2ofjcs8y" path="res://assets/sleepyJoe.obj" id="2_iifgy"]
+[ext_resource type="Script" uid="uid://be5jomikuna1m" path="res://scripts/enemy_vission.gd" id="3_epg4t"]
+[ext_resource type="PackedScene" uid="uid://yyu6gbwyt4fm" path="res://assets/officeStuff/mug.tscn" id="4_iifgy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r3fl7"]
+radius = 0.28710938
+height = 2.01865
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_noarx"]
+radius = 2.2718246
+
+[sub_resource type="PrismMesh" id="PrismMesh_a0tk4"]
+
+[node name="Enemy" type="CharacterBody3D" unique_id=503778989]
+script = ExtResource("1_qi2p4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1570795275]
+transform = Transform3D(-1.3113417e-08, 1.1464112e-15, -0.1, -8.742278e-09, -0.1, 4.2351648e-23, -0.1, 8.742278e-09, 1.3113417e-08, -0.0010255575, 0, -0.080475986)
+mesh = ExtResource("2_iifgy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=542202001]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.0010255575, 0.117292404, -0.080475986)
+shape = SubResource("CapsuleShape3D_r3fl7")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=765814750]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.0010254383, 0, 0.9389199)
+script = ExtResource("3_epg4t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1210237451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3098686, 0, -0.08470082)
+shape = SubResource("SphereShape3D_noarx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=461883185]
+transform = Transform3D(-0.040391702, -3.8265305, 0.0019328698, -0.13493674, 0.009852756, 1.0620496, -2.676115, 0.057258636, -0.053580455, 0.9410105, 0, -0.09748173)
+visible = false
+mesh = SubResource("PrismMesh_a0tk4")
+
+[node name="Cylinder_006" parent="." unique_id=1516422512 instance=ExtResource("4_iifgy")]
+transform = Transform3D(-0.012513826, -0.07942324, -0.0016504664, 0.0037000016, -0.0022499955, 0.08029999, -0.07935458, 0.012414906, 0.0040013096, -0.11768097, 0.14005451, 0.640669)
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

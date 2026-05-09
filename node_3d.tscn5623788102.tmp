@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://chu80r5ddr7p5"]
+
+[ext_resource type="Script" path="res://character_body_3d.gd" id="1_a202f"]
+[ext_resource type="Script" uid="uid://7btq4ewh1doi" path="res://enemy.gd" id="2_noarx"]
+[ext_resource type="PackedScene" uid="uid://s5dq3q38txw" path="res://assets/plant.tscn" id="2_r3fl7"]
+[ext_resource type="Script" path="res://area_3d.gd" id="3_a0tk4"]
+
+[sub_resource type="Environment" id="Environment_a202f"]
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_a202f"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a0tk4"]
+material = SubResource("ORMMaterial3D_a202f")
+size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a0tk4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r3fl7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_noarx"]
+radius = 2.2718246
+
+[sub_resource type="PrismMesh" id="PrismMesh_a0tk4"]
+
+[node name="Node3D" type="Node3D" unique_id=1070173309]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1523260978]
+environment = SubResource("Environment_a202f")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=101620679 groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2178957, 0)
+script = ExtResource("1_a202f")
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=1176611965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4681077, -0.06657028)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=816782448]
+shape = SubResource("CapsuleShape3D_noarx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1929898256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1042760576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04463315, 0)
+mesh = SubResource("BoxMesh_a0tk4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=625354017]
+shape = SubResource("BoxShape3D_r3fl7")
+
+[node name="plant" parent="StaticBody3D" unique_id=2135420923 instance=ExtResource("2_r3fl7")]
+transform = Transform3D(0.18058999, 0.13351999, 0, 5.8363443e-09, -7.893839e-09, 0.22458999, 0.13351999, -0.18058999, -9.81714e-09, -2.6151452, 0.72459, 2.9648979)
+
+[node name="plant2" parent="StaticBody3D" unique_id=2011838902 instance=ExtResource("2_r3fl7")]
+transform = Transform3D(0.18058999, 0.13351999, 0, 5.8363443e-09, -7.893839e-09, 0.22458999, 0.13351999, -0.18058999, -9.81714e-09, -9.696616, 0.7245895, 3.963975)
+
+[node name="plant3" parent="StaticBody3D" unique_id=266745246 instance=ExtResource("2_r3fl7")]
+transform = Transform3D(0.18058999, 0.13351999, 0, 5.8363443e-09, -7.893839e-09, 0.22458999, 0.13351999, -0.18058999, -9.81714e-09, 3.702544, 0.72459, -3.93961)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1585581584]
+transform = Transform3D(1, 0, 0, 0, 0.051795617, 0.9986577, 0, -0.9986577, 0.051795617, 0, 2.2397714, 0)
+
+[node name="Enemy" type="CharacterBody3D" parent="." unique_id=1472204322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9594264, 1.0224121, 0)
+script = ExtResource("2_noarx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy" unique_id=508096159]
+mesh = SubResource("CapsuleMesh_a0tk4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy" unique_id=816210609]
+shape = SubResource("CapsuleShape3D_r3fl7")
+
+[node name="Area3D" type="Area3D" parent="Enemy" unique_id=1940540906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0193958, 0, 0)
+script = ExtResource("3_a0tk4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Area3D" unique_id=1968684469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97708654, 0, 2.1970267)
+shape = SubResource("SphereShape3D_noarx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy/Area3D" unique_id=1216951041]
+transform = Transform3D(2.676115, -0.05725847, 0.053580455, -0.13493675, 0.009852757, 1.0620497, -0.040391587, -3.8265307, 0.0019328722, -1.0013185, 0, 2.2507544)
+mesh = SubResource("PrismMesh_a0tk4")
+
+[connection signal="body_entered" from="Enemy/Area3D" to="Enemy/Area3D" method="_on_body_entered"]

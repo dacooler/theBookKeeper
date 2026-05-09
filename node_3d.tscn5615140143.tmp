@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://chu80r5ddr7p5"]
 
-[ext_resource type="Script" uid="uid://d4fsqvo6kkhd4" path="res://character_body_3d.gd" id="1_a202f"]
+[ext_resource type="Script" path="res://character_body_3d.gd" id="1_a202f"]
 [ext_resource type="Script" uid="uid://7btq4ewh1doi" path="res://enemy.gd" id="2_noarx"]
-[ext_resource type="Script" uid="uid://be5jomikuna1m" path="res://area_3d.gd" id="3_a0tk4"]
+[ext_resource type="PackedScene" uid="uid://s5dq3q38txw" path="res://assets/plant.tscn" id="2_r3fl7"]
+[ext_resource type="Script" path="res://area_3d.gd" id="3_a0tk4"]
 
 [sub_resource type="Environment" id="Environment_a202f"]
 sdfgi_enabled = true
@@ -52,6 +53,15 @@ mesh = SubResource("BoxMesh_a0tk4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=625354017]
 shape = SubResource("BoxShape3D_r3fl7")
+
+[node name="plant" parent="StaticBody3D" unique_id=2135420923 instance=ExtResource("2_r3fl7")]
+transform = Transform3D(0.18058999, 0.13351999, 0, 5.8363443e-09, -7.893839e-09, 0.22458999, 0.13351999, -0.18058999, -9.81714e-09, -2.6151452, 0.72459, 2.9648979)
+
+[node name="plant2" parent="StaticBody3D" unique_id=2011838902 instance=ExtResource("2_r3fl7")]
+transform = Transform3D(0.18058999, 0.13351999, 0, 5.8363443e-09, -7.893839e-09, 0.22458999, 0.13351999, -0.18058999, -9.81714e-09, -9.696616, 0.7245895, 3.963975)
+
+[node name="plant3" parent="StaticBody3D" unique_id=266745246 instance=ExtResource("2_r3fl7")]
+transform = Transform3D(0.18058999, 0.13351999, 0, 5.8363443e-09, -7.893839e-09, 0.22458999, 0.13351999, -0.18058999, -9.81714e-09, 3.702544, 0.72459, -3.93961)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1585581584]
 transform = Transform3D(1, 0, 0, 0, 0.051795617, 0.9986577, 0, -0.9986577, 0.051795617, 0, 2.2397714, 0)
