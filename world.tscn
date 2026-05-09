@@ -133,3 +133,5 @@ visible = false
 
 [node name="reciept" parent="." unique_id=2079881988 instance=ExtResource("7_pkg7o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9243152, 1.7572684, 0.41137087)
+
+[node name="Node" type="Node" parent="." unique_id=1458744958]
