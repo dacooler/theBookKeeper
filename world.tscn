@@ -141,7 +141,9 @@ script = ExtResource("8_ioo17")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node" unique_id=2114996157]
 stream = ExtResource("9_wse8f")
+autoplay = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Node" unique_id=1816693046]
 stream = ExtResource("9_wse8f")
 volume_db = -80.0
+autoplay = true
