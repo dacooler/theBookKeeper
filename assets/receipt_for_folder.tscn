@@ -1,13 +1,14 @@
-[gd_scene format=3 uid="uid://c12yoxkvr8tvr"]
+[gd_scene format=3 uid="uid://crtelseqdx3bi"]
 
-[ext_resource type="Texture2D" uid="uid://byr38x3ge132j" path="res://assets/kvitto2.jpg" id="1_va031"]
+[ext_resource type="Texture2D" uid="uid://ym7ragjfpgju" path="res://assets/kvitto4.png" id="1_va031"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rug40"]
+transparency = 1
 albedo_texture = ExtResource("1_va031")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mxi64"]
 
 [node name="receiptForFolder" type="MeshInstance3D" unique_id=1813106541]
-transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0.106666595, 0)
 material_override = SubResource("StandardMaterial3D_rug40")
 mesh = SubResource("PlaneMesh_mxi64")

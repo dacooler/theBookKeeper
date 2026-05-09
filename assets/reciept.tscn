@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://bhqw08hjg5kpl"]
 
 [ext_resource type="Script" uid="uid://h5xisprotq11" path="res://scripts/reciept.gd" id="1_fdjck"]
-[ext_resource type="Texture2D" uid="uid://bv736vo6dbpm" path="res://assets/kvitto1.jpg" id="2_6bkvn"]
+[ext_resource type="Texture2D" uid="uid://cua5qyr5xrq2q" path="res://assets/kvitto1.png" id="2_fdjck"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdjck"]
+transparency = 1
 cull_mode = 2
-albedo_texture = ExtResource("2_6bkvn")
+albedo_texture = ExtResource("2_fdjck")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_i5arm"]
 

@@ -11,6 +11,8 @@ var acceleration := Vector3.ZERO;
 
 @onready var camera = $Camera3D
 @onready var folder: MeshInstance3D = $folder
+@onready var clamp_player: AudioStreamPlayer = $"../Node/ClampPlayer"
+@onready var rip_player: AudioStreamPlayer = $"../Node/RipPlayer"
 const RECEIPT_FOR_FOLDER = preload("res://assets/receipt_for_folder.tscn")
 var receipts_in_folder: Array[Node3D] = [];
 
@@ -18,6 +20,7 @@ func collect_recipt():
 	receipts += 1;
 	var receipt: Node3D = RECEIPT_FOR_FOLDER.instantiate();
 	folder.add_child(receipt);
+	clamp_player.play()
 	receipts_in_folder.append(receipt);
 
 	var rng := RandomNumberGenerator.new();
@@ -25,7 +28,9 @@ func collect_recipt():
 	receipt.position.x += rng.randf_range(-0.7, 0.9);
 	receipt.position.z += rng.randf_range(-0.3, 0.3);
 
+
 func use_recipt():
+	rip_player.play()
 	receipts -= 1;
 	receipts_in_folder.pop_back().queue_free();
 

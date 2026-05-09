@@ -1,21 +1,39 @@
-[gd_scene format=3 uid="uid://314121h6sdok"]
+[gd_scene format=3 uid="uid://chu80r5ddr7p5"]
 
-[ext_resource type="PackedScene" uid="uid://cj5jt8llwcyr2" path="res://assets/player.tscn" id="1_wse8f"]
-[ext_resource type="PackedScene" path="res://assets/enemy.tscn" id="2_gbfbk"]
+[ext_resource type="PackedScene" path="res://assets/player.tscn" id="1_wse8f"]
+[ext_resource type="PackedScene" uid="uid://crm5uxlc1okbj" path="res://assets/enemy.tscn" id="2_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://b7jvp5a3fonf4" path="res://assets/terrain/floor.tscn" id="3_ioo17"]
 [ext_resource type="PackedScene" uid="uid://s5dq3q38txw" path="res://assets/officeStuff/plant.tscn" id="4_wse8f"]
 [ext_resource type="PackedScene" uid="uid://da7niy6mlgwe7" path="res://assets/terrain/wall_1.tscn" id="5_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://dou55ei6jwos7" path="res://assets/terrain/roof.tscn" id="6_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://dtlxe04ciw2nh" path="res://assets/officeStuff/deskWithStuff.tscn" id="7_ic0uy"]
-[ext_resource type="PackedScene" path="res://assets/reciept.tscn" id="7_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://bhqw08hjg5kpl" path="res://assets/reciept.tscn" id="7_pkg7o"]
 [ext_resource type="Script" uid="uid://btpgkjfvhrku3" path="res://node.gd" id="8_ioo17"]
 [ext_resource type="PackedScene" uid="uid://bqxmp0mqyqjpu" path="res://assets/officeStuff/water.tscn" id="8_k3n1d"]
 [ext_resource type="AudioStream" uid="uid://baqxfsdlafwlo" path="res://assets/sounds/bookkeep.wav" id="9_wse8f"]
 [ext_resource type="AudioStream" uid="uid://bahkwic07cjcr" path="res://assets/sounds/Bookkeepingontherun.wav" id="10_wse8f"]
+[ext_resource type="AudioStream" uid="uid://daq2ith0y2s1o" path="res://assets/sounds/Rip-001.wav" id="13_ikiii"]
+[ext_resource type="AudioStream" uid="uid://w773pjpq0pht" path="res://assets/sounds/Rip-002.wav" id="14_cbp6q"]
+[ext_resource type="AudioStream" uid="uid://b46nxpvntefoy" path="res://assets/sounds/Rip-003.wav" id="15_26xuy"]
+[ext_resource type="AudioStream" uid="uid://cjba3oetc681m" path="res://assets/sounds/clamp-001.wav" id="16_bc84e"]
+[ext_resource type="AudioStream" uid="uid://05yt32md41gs" path="res://assets/sounds/clamp-002.wav" id="17_wukud"]
+[ext_resource type="AudioStream" uid="uid://b1c34uwj523l0" path="res://assets/sounds/clamp-003.wav" id="18_il2jm"]
 
 [sub_resource type="Environment" id="Environment_a202f"]
 sdfgi_enabled = true
 sdfgi_use_occlusion = true
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wjb0r"]
+streams_count = 3
+stream_0/stream = ExtResource("13_ikiii")
+stream_1/stream = ExtResource("14_cbp6q")
+stream_2/stream = ExtResource("15_26xuy")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mc2jv"]
+streams_count = 3
+stream_0/stream = ExtResource("16_bc84e")
+stream_1/stream = ExtResource("17_wukud")
+stream_2/stream = ExtResource("18_il2jm")
 
 [node name="Node3D" type="Node3D" unique_id=1070173309]
 
@@ -204,6 +222,12 @@ autoplay = true
 stream = ExtResource("10_wse8f")
 volume_db = -80.0
 autoplay = true
+
+[node name="RipPlayer" type="AudioStreamPlayer" parent="Node" unique_id=1760807976]
+stream = SubResource("AudioStreamRandomizer_wjb0r")
+
+[node name="ClampPlayer" type="AudioStreamPlayer" parent="Node" unique_id=1725008076]
+stream = SubResource("AudioStreamRandomizer_mc2jv")
 
 [node name="reciept2" parent="." unique_id=899130906 instance=ExtResource("7_pkg7o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7495375, 1.007515, -12.7253275)
