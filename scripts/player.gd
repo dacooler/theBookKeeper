@@ -12,7 +12,7 @@ var acceleration := Vector3.ZERO;
 
 @onready var camera = $Camera3D
 @onready var folder: MeshInstance3D = $folder
-const RECEIPT_FOR_FOLDER = preload("uid://c12yoxkvr8tvr")
+const RECEIPT_FOR_FOLDER = preload("res://assets/receipt_for_folder.tscn")
 var receipts_in_folder: Array[Node3D] = [];
 
 func collect_recipt():
@@ -21,7 +21,7 @@ func collect_recipt():
 	folder.add_child(receipt);
 	receipts_in_folder.append(receipt);
 
-	receipt.position.y += 1;
+	receipt.position.y += .1;
 
 func use_recipt():
 	receipts -= 1;
