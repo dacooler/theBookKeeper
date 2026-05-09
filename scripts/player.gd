@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 const SPEED = 20.0
 const JUMP_VELOCITY = 4.5
 const mouse_sensitivity = 0.002
@@ -21,7 +20,10 @@ func collect_recipt():
 	folder.add_child(receipt);
 	receipts_in_folder.append(receipt);
 
-	receipt.position.y += .1;
+	var rng := RandomNumberGenerator.new();
+	receipt.position.y += .01 * receipts_in_folder.size();
+	receipt.position.x += rng.randf_range(-0.7, 0.9);
+	receipt.position.z += rng.randf_range(-0.3, 0.3);
 
 func use_recipt():
 	receipts -= 1;
@@ -33,9 +35,9 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseMotion:
-			rotate_y(-event.relative.x * mouse_sensitivity)
-			camera.rotate_x(-event.relative.y * mouse_sensitivity)
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+		rotate_y(-event.relative.x * mouse_sensitivity)
+		camera.rotate_x(-event.relative.y * mouse_sensitivity)
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
