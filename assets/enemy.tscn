@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://crm5uxlc1okbj"]
+[gd_scene format=3 uid="uid://c56q6s8k2uk3g"]
 
 [ext_resource type="Script" uid="uid://7btq4ewh1doi" path="res://scripts/enemy.gd" id="1_qi2p4"]
 [ext_resource type="ArrayMesh" uid="uid://c6yrf2ofjcs8y" path="res://assets/sleepyJoe.obj" id="2_iifgy"]

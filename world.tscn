@@ -49,6 +49,20 @@ transform = Transform3D(1, 0, 0, 0, 0.051795617, 0.9986577, 0, -0.9986577, 0.051
 [node name="Enemy" parent="." unique_id=503778989 instance=ExtResource("2_gbfbk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7977533, 1.0224121, 1.7697182)
 
+[node name="Waypoints" type="Node" parent="Enemy" unique_id=511727509]
+
+[node name="Node3D" type="Node3D" parent="Enemy/Waypoints" unique_id=706533113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.672925, 1.3137236, 0.38210106)
+
+[node name="Node3D2" type="Node3D" parent="Enemy/Waypoints" unique_id=1447418740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1250372, 21.582481)
+
+[node name="Node3D3" type="Node3D" parent="Enemy/Waypoints" unique_id=11265917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.087643, 0.58281136, 20.281563)
+
+[node name="Node3D4" type="Node3D" parent="Enemy/Waypoints" unique_id=1629817355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 11)
+
 [node name="floor" parent="." unique_id=14097517 instance=ExtResource("3_ioo17")]
 
 [node name="plant" parent="floor" unique_id=2135420923 instance=ExtResource("4_wse8f")]
