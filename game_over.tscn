@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ddyp8crfs7fxr"]
+
+[ext_resource type="Script" uid="uid://7ob8kf02rf85" path="res://scripts/restartbutton.gd" id="1_y26ei"]
+
+[node name="GameOver" type="Node2D" unique_id=573527556]
+
+[node name="Button" type="Button" parent="." unique_id=1370266428]
+offset_left = 529.0
+offset_top = 260.0
+offset_right = 594.0
+offset_bottom = 291.0
+text = "Restart"
+script = ExtResource("1_y26ei")
+
+[node name="Label" type="Label" parent="." unique_id=1970852858]
+offset_left = 481.0
+offset_top = 208.0
+offset_right = 647.0
+offset_bottom = 231.0
+text = "You Lost! Game Over!"

@@ -32,6 +32,11 @@ func collect_recipt():
 func use_recipt():
 	rip_player.play()
 	receipts -= 1;
+	if receipts < 0:
+		print_debug("Lost!");
+		# Lose game
+		get_tree().change_scene_to_file("res://game_over.tscn");
+		return;
 	receipts_in_folder.pop_back().queue_free();
 
 func _ready():

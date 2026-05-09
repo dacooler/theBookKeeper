@@ -77,11 +77,20 @@ func _start_chasing(body):
 	music_player.highIntense();
 	state = EnemyState.CHASING;
 
+func _handle_collision(body):
+	if body.is_in_group("player") && state == EnemyState.CHASING:
+		body.use_recipt();
+		_start_ideling();
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	const SPEED := 2.0;
 	const ROTATION_SPEED := 2.0;
 	const CHASING_SPEED_MULTIPLIER := 2.0;
+
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i);
+		_handle_collision(collision.get_collider());
 
 	var speed = SPEED;
 	var rotation_speed = ROTATION_SPEED;
