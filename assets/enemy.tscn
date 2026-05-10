@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://dx0oaymgff3vw" path="res://assets/sounds/joe-001.wav" id="6_npimb"]
 [ext_resource type="AudioStream" uid="uid://bqbkcekspq82v" path="res://assets/sounds/joe-003.wav" id="7_b3050"]
 [ext_resource type="AudioStream" uid="uid://biyx1lninygqb" path="res://assets/sounds/joe-002.wav" id="8_fpuwb"]
+[ext_resource type="ArrayMesh" uid="uid://c0e2ey8jonped" path="res://assets/cone.obj" id="9_fpuwb"]
+[ext_resource type="Texture2D" uid="uid://7w82angs5sp0" path="res://assets/1px.png" id="10_l6p6t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r3fl7"]
 radius = 0.28710938
@@ -24,6 +26,10 @@ points = PackedVector3Array(-4, 0, -2, -4, 0, 2, 10, 0, 8, 10, 0, -8)
 streams_count = 2
 stream_0/stream = ExtResource("6_npimb")
 stream_1/stream = ExtResource("7_b3050")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfeia"]
+transparency = 1
+albedo_texture = ExtResource("10_l6p6t")
 
 [node name="Enemy" type="CharacterBody3D" unique_id=503778989]
 script = ExtResource("1_qi2p4")
@@ -64,6 +70,12 @@ stream = SubResource("AudioStreamRandomizer_l6p6t")
 
 [node name="JoeAmbient" type="AudioStreamPlayer3D" parent="." unique_id=344334546]
 stream = ExtResource("8_fpuwb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1969189699]
+transform = Transform3D(7.6819057, 0, 0, 0, -0.17405169, 2.5850074, 0, -5.9555497, -0.075547166, -0.0016312599, 1.2759348, 5.6596093)
+visible = false
+mesh = ExtResource("9_fpuwb")
+surface_material_override/0 = SubResource("StandardMaterial3D_wfeia")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="throwArea" to="throwArea" method="_on_body_entered"]
