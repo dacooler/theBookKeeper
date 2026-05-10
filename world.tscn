@@ -892,10 +892,10 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.770416, 1.6923922, 12.931449)
 
 [node name="Poster6" parent="." unique_id=374534634 instance=ExtResource("25_bo7i5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1499622, 2.4222338, -2.2279267)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1499622, 2.4222338, -2.2157469)
 
 [node name="Poster7" parent="." unique_id=1430883763 instance=ExtResource("25_bo7i5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.058361, 2.5633378, -2.2279265)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.058361, 2.5633378, -2.2106845)
 
 [node name="Poster8" parent="." unique_id=1623750724 instance=ExtResource("25_bo7i5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.222378, 1.1716607, 24.42659)
