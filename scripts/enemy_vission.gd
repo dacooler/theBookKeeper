@@ -13,5 +13,13 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		print("hello there");
-		enemy._start_chasing(body);
+		var space := get_world_3d().direct_space_state;
+		var query := PhysicsRayQueryParameters3D.create(
+			global_position,
+			body.global_position
+		);
+		var result := space.intersect_ray(query);
+		print("hello walllll");
+		if result and result.collider == body:
+			print("hello there");
+			enemy._start_chasing(body);
