@@ -33,7 +33,7 @@ func kill():
 	# Lose game
 	get_tree().change_scene_to_file("res://game_over.tscn");
 	return;
-	
+
 func use_recipt():
 	rip_player.play()
 	receipts -= 1;

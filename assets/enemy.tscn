@@ -4,6 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c6yrf2ofjcs8y" path="res://assets/sleepyJoe.obj" id="2_iifgy"]
 [ext_resource type="Script" uid="uid://be5jomikuna1m" path="res://scripts/enemy_vission.gd" id="3_epg4t"]
 [ext_resource type="PackedScene" uid="uid://yyu6gbwyt4fm" path="res://assets/officeStuff/mug.tscn" id="4_iifgy"]
+[ext_resource type="Script" uid="uid://ca7xrvs6wv0no" path="res://scripts/enemy_throw.gd" id="5_4lsqg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r3fl7"]
 radius = 0.28710938
@@ -13,6 +14,8 @@ height = 2.01865
 points = PackedVector3Array(-4, 0, -2, -4, 0, 2, 10, 0, 8, 10, 0, -8)
 
 [sub_resource type="PrismMesh" id="PrismMesh_a0tk4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_edavc"]
 
 [node name="Enemy" type="CharacterBody3D" unique_id=503778989]
 script = ExtResource("1_qi2p4")
@@ -41,4 +44,12 @@ mesh = SubResource("PrismMesh_a0tk4")
 [node name="Cylinder_006" parent="." unique_id=1516422512 instance=ExtResource("4_iifgy")]
 transform = Transform3D(-0.012513826, -0.07942324, -0.0016504664, 0.0037000016, -0.0022499955, 0.08029999, -0.07935458, 0.012414906, 0.0040013096, -0.11768097, 0.14005451, 0.640669)
 
+[node name="throwArea" type="Area3D" parent="." unique_id=1119908120]
+script = ExtResource("5_4lsqg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="throwArea" unique_id=758761527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9061971)
+shape = SubResource("BoxShape3D_edavc")
+
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="throwArea" to="throwArea" method="_on_body_entered"]

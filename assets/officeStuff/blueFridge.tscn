@@ -621,7 +621,7 @@ shadow_mesh = SubResource("ArrayMesh_2j1hm")
 [sub_resource type="BoxShape3D" id="BoxShape3D_gvtk1"]
 size = Vector3(0.81225586, 0.5802002, 2.187683)
 
-[node name="Blue Fridge" type="RigidBody3D" unique_id=207537664]
+[node name="Blue Fridge" type="RigidBody3D" unique_id=207537664 groups=["throw"]]
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0)
 
 [node name="Cube_000" type="Node3D" parent="." unique_id=515197622]
