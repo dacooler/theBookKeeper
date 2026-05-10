@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://chu80r5ddr7p5"]
 
-[ext_resource type="PackedScene" uid="uid://cj5jt8llwcyr2" path="res://assets/player.tscn" id="1_wse8f"]
+[ext_resource type="PackedScene" path="res://assets/player.tscn" id="1_wse8f"]
 [ext_resource type="PackedScene" uid="uid://c56q6s8k2uk3g" path="res://assets/enemy.tscn" id="2_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://b7jvp5a3fonf4" path="res://assets/terrain/floor.tscn" id="3_ioo17"]
 [ext_resource type="PackedScene" uid="uid://s5dq3q38txw" path="res://assets/officeStuff/plant.tscn" id="4_wse8f"]
@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dhqa5nroyh56d" path="res://assets/officeStuff/blueFridge.tscn" id="20_26xuy"]
 [ext_resource type="PackedScene" uid="uid://djhkr5ucrijis" path="res://assets/officeStuff/exitSign.tscn" id="21_bc84e"]
 [ext_resource type="PackedScene" uid="uid://c4lx0lljwhigv" path="res://assets/officeStuff/cabinStorage.tscn" id="22_wukud"]
-[ext_resource type="PackedScene" uid="uid://ctafu74inve6v" path="res://assets/reciept_spawner.tscn" id="26_bo7i5"]
+[ext_resource type="PackedScene" path="res://assets/reciept_spawner.tscn" id="26_bo7i5"]
 
 [sub_resource type="Environment" id="Environment_a202f"]
 sdfgi_enabled = true
@@ -206,6 +206,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7809472, 0, 0)
 [node name="Node3D6" parent="Node3D6" unique_id=1260272994 instance=ExtResource("7_ic0uy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6601963, 0, 0)
 
+[node name="Node3D7" parent="Node3D6" unique_id=448400118 instance=ExtResource("7_ic0uy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7279625, 0, 0)
+
+[node name="Node3D8" parent="Node3D6" unique_id=1831345662 instance=ExtResource("7_ic0uy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7279625, -5.256097, -2.0861626e-07)
+
+[node name="Node3D9" parent="Node3D6" unique_id=489935012 instance=ExtResource("7_ic0uy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7279625, 10.679524, 5.066395e-07)
+
+[node name="Node3D10" parent="Node3D6" unique_id=1288092248 instance=ExtResource("7_ic0uy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7279625, 17.551594, 8.046627e-07)
+
 [node name="Node3D7" type="Node3D" parent="." unique_id=853600584]
 transform = Transform3D(0.7732097, -0.63415045, -2.7719596e-08, 0, -4.371139e-08, 1, -0.63415045, -0.7732097, -3.379807e-08, -6.237663, -0.3523183, 15.170702)
 
@@ -372,6 +384,33 @@ transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, 
 
 [node name="Blue Fridge3" parent="deco" unique_id=1817053594 instance=ExtResource("20_26xuy")]
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, -14.478125, -0.32076216, 7.9290466)
+
+[node name="Blue Fridge19" parent="deco" unique_id=207537664 instance=ExtResource("20_26xuy")]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, -21.193356, -0.32076216, 7.9290466)
+
+[node name="Blue Fridge20" parent="deco" unique_id=1388530912 instance=ExtResource("20_26xuy")]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, -22.052673, -0.32076216, 7.9290466)
+
+[node name="Blue Fridge21" parent="deco" unique_id=761246058 instance=ExtResource("20_26xuy")]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, -22.945183, -0.32076216, 7.9290466)
+
+[node name="Blue Fridge22" parent="deco" unique_id=1941566292 instance=ExtResource("20_26xuy")]
+transform = Transform3D(-0.99953413, -0.030521093, -1.3341194e-09, 0, -4.371138e-08, 0.9999999, -0.030521093, 0.999534, 4.3691017e-08, -20.8049, -0.32076216, 8.470461)
+
+[node name="Blue Fridge23" parent="deco" unique_id=1535188545 instance=ExtResource("20_26xuy")]
+transform = Transform3D(-0.99953413, -0.030521093, -1.3341194e-09, 0, -4.371138e-08, 0.9999999, -0.030521093, 0.999534, 4.3691017e-08, -19.652, -0.32076216, 8.470461)
+
+[node name="Blue Fridge24" parent="deco" unique_id=90932307 instance=ExtResource("20_26xuy")]
+transform = Transform3D(-0.99953413, -0.030521093, -1.3341194e-09, 0, -4.371138e-08, 0.9999999, -0.030521093, 0.999534, 4.3691017e-08, -18.537601, -0.32076216, 8.470461)
+
+[node name="Blue Fridge25" parent="deco" unique_id=1544174863 instance=ExtResource("20_26xuy")]
+transform = Transform3D(-0.99953413, -0.030521093, -1.3341194e-09, 0, -4.371138e-08, 0.9999999, -0.030521093, 0.999534, 4.3691017e-08, -18.537601, -0.32076216, -0.7043123)
+
+[node name="Blue Fridge26" parent="deco" unique_id=1036972294 instance=ExtResource("20_26xuy")]
+transform = Transform3D(-0.99953413, -0.030521093, -1.3341194e-09, 0, -4.371138e-08, 0.9999999, -0.030521093, 0.999534, 4.3691017e-08, -19.51745, -0.32076216, -0.7043123)
+
+[node name="Blue Fridge27" parent="deco" unique_id=62363825 instance=ExtResource("20_26xuy")]
+transform = Transform3D(-0.99953413, -0.030521093, -1.3341194e-09, 0, -4.371138e-08, 0.9999999, -0.030521093, 0.999534, 4.3691017e-08, -20.644836, -0.32076216, -0.7043123)
 
 [node name="Blue Fridge13" parent="deco" unique_id=165095305 instance=ExtResource("20_26xuy")]
 transform = Transform3D(0.07530939, 0.99716014, 4.3587253e-08, 0, -4.371138e-08, 0.9999999, 0.99716014, -0.07530937, -3.2918772e-09, -16.926163, -0.32076216, 7.9290466)
