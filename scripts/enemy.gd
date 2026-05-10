@@ -102,7 +102,7 @@ func _start_chasing(body):
 
 func _handle_collision(body):
 	if body.is_in_group("player") && state == EnemyState.CHASING:
-		body.use_recipt();
+		body.kill();
 		_start_ideling();
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

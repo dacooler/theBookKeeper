@@ -28,7 +28,12 @@ func collect_recipt():
 	receipt.position.x += rng.randf_range(-0.7, 0.9);
 	receipt.position.z += rng.randf_range(-0.3, 0.3);
 
-
+func kill():
+	print_debug("Lost!");
+	# Lose game
+	get_tree().change_scene_to_file("res://game_over.tscn");
+	return;
+	
 func use_recipt():
 	rip_player.play()
 	receipts -= 1;
