@@ -1,5 +1,8 @@
 [gd_scene format=4 uid="uid://bqxmp0mqyqjpu"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ax8il"]
+size = Vector3(3.5351563, 2.6260986, 7.8632813)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_plw6m"]
 resource_name = "Material.034"
 cull_mode = 2
@@ -315,11 +318,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tdy5s")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ax8il"]
-size = Vector3(3.5351563, 2.6260986, 7.8632813)
-
-[node name="Watercooler" type="Node3D" unique_id=562792557]
+[node name="Watercooler" type="RigidBody3D" unique_id=1203756721]
 transform = Transform3D(0.23231, 0, 0, 0, -1.0154593e-08, 0.23231, 0, -0.23231, -1.0154593e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=225837381]
+transform = Transform3D(1, 0, 0, 0, 1, -2.842171e-14, 0, 2.842171e-14, 1, -0.43164063, -0.0066527864, 3.4316406)
+shape = SubResource("BoxShape3D_ax8il")
 
 [node name="Cube_023_0" type="MeshInstance3D" parent="." unique_id=1726422975]
 mesh = SubResource("ArrayMesh_y8bc4")
@@ -344,9 +348,3 @@ mesh = SubResource("ArrayMesh_abl7b")
 
 [node name="Cube_023_7" type="MeshInstance3D" parent="." unique_id=1911874758]
 mesh = SubResource("ArrayMesh_utek7")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=800122474]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=225837381]
-transform = Transform3D(1, 0, 0, 0, 1, -2.842171e-14, 0, 2.842171e-14, 1, -0.43164063, -0.0066527864, 3.4316406)
-shape = SubResource("BoxShape3D_ax8il")
