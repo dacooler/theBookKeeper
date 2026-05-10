@@ -11,3 +11,12 @@ albedo_texture = ExtResource("1_saige")
 transform = Transform3D(2.149932, 0, 0, 0, 1.9199643, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("QuadMesh_j1568")
 surface_material_override/0 = SubResource("StandardMaterial3D_m0hp8")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1770903146]
+transform = Transform3D(0.46513104, 0, 0, 0, 0.520843, 0, 0, 0, 1, 0.21640654, 0.17627132, 0.19795763)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1608799231]
+transform = Transform3D(-0.46513104, 0, 4.0663036e-08, 0, 0.520843, 0, -8.742275e-08, 0, -1, 0, 0, -4.9562683)
+light_energy = 4.586
+spot_range = 22.711948
+spot_angle = 20.46224

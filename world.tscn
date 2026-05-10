@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://chu80r5ddr7p5"]
 
-[ext_resource type="PackedScene" uid="uid://1yff3i2k4c65" path="res://assets/player.tscn" id="1_wse8f"]
+[ext_resource type="PackedScene" uid="uid://cj5jt8llwcyr2" path="res://assets/player.tscn" id="1_wse8f"]
 [ext_resource type="PackedScene" uid="uid://c56q6s8k2uk3g" path="res://assets/enemy.tscn" id="2_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://b7jvp5a3fonf4" path="res://assets/terrain/floor.tscn" id="3_ioo17"]
 [ext_resource type="PackedScene" uid="uid://s5dq3q38txw" path="res://assets/officeStuff/plant.tscn" id="4_wse8f"]
@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://jvexmor3u53m" path="res://assets/Poster1.tscn" id="24_mc2jv"]
 [ext_resource type="PackedScene" uid="uid://dynmbv6x4gak6" path="res://assets/Poster2.tscn" id="25_bo7i5"]
 [ext_resource type="PackedScene" uid="uid://crmqcyfdbj1r5" path="res://assets/Window.tscn" id="26_4h6ng"]
-[ext_resource type="PackedScene" path="res://assets/reciept_spawner.tscn" id="26_bo7i5"]
+[ext_resource type="PackedScene" uid="uid://ctafu74inve6v" path="res://assets/reciept_spawner.tscn" id="26_bo7i5"]
 
 [sub_resource type="Environment" id="Environment_a202f"]
 sdfgi_enabled = true
@@ -50,9 +50,6 @@ environment = SubResource("Environment_a202f")
 
 [node name="Player" parent="." unique_id=1466024363 instance=ExtResource("1_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2178957, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1585581584]
-transform = Transform3D(1, 0, 0, 0, 0.051795617, 0.9986577, 0, -0.9986577, 0.051795617, 0, 2.2397714, 0)
 
 [node name="floor" parent="." unique_id=14097517 instance=ExtResource("3_ioo17")]
 
@@ -150,7 +147,12 @@ transform = Transform3D(3.2509423e-08, 0, -0.1, 0, 4, 0, -0.7437289, 0, -4.37113
 
 [node name="roof" parent="." unique_id=312619683 instance=ExtResource("6_k3n1d")]
 transform = Transform3D(200, 0, 0, 0, 0.1, 0, 0, 0, 200, -12.274902, 3.633048, -1.4961123)
-visible = false
+
+[node name="OmniLight3D" type="OmniLight3D" parent="roof" unique_id=202605791]
+transform = Transform3D(0.0050000004, 0, 0, 0, 10, 0, 0, 0, 0.0050000004, -0.0025166124, -2.048584, 0.041411635)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="roof" unique_id=147231203]
+transform = Transform3D(0.0050000004, 0, 0, 0, 10, 0, 0, 0, 0.0050000004, -0.0026867092, -1.5818596, 0.08165233)
 
 [node name="Node3D" type="Node3D" parent="." unique_id=676537696]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5870378, -0.3523183, -1.3650181)
@@ -1010,3 +1012,15 @@ transform = Transform3D(-7.9560344e-08, 0, -0.99999994, 0, 1.7311902, 0, 1.82012
 
 [node name="Window14" parent="." unique_id=1426808423 instance=ExtResource("26_4h6ng")]
 transform = Transform3D(-7.9560344e-08, 0, -0.99999994, 0, 1.7311902, 0, 1.8201284, 0, -4.3711385e-08, 2.3159957, 1.974045, 34.744946)
+
+[node name="Window15" parent="." unique_id=1261530989 instance=ExtResource("26_4h6ng")]
+transform = Transform3D(-9.397652e-08, 0, 1.0000001, 0, 1.9199643, 0, -2.149932, 0, -4.371139e-08, -24.637764, 2.078965, -12.728671)
+
+[node name="Window16" parent="." unique_id=1011093221 instance=ExtResource("26_4h6ng")]
+transform = Transform3D(-9.397652e-08, 0, 1.0000001, 0, 1.9199643, 0, -2.149932, 0, -4.371139e-08, -24.637764, 2.078965, -9.261673)
+
+[node name="Window17" parent="." unique_id=379039994 instance=ExtResource("26_4h6ng")]
+transform = Transform3D(-9.397652e-08, 0, 1.0000001, 0, 1.9199643, 0, -2.149932, 0, -4.371139e-08, -24.637764, 2.078965, 13.610272)
+
+[node name="Window18" parent="." unique_id=2014434238 instance=ExtResource("26_4h6ng")]
+transform = Transform3D(-9.397652e-08, 0, 1.0000001, 0, 1.9199643, 0, -2.149932, 0, -4.371139e-08, -24.637764, 2.078965, 20.208496)

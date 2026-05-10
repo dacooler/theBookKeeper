@@ -165,3 +165,6 @@ mesh = SubResource("ArrayMesh_uooll")
 
 [node name="Cube_006_3" type="MeshInstance3D" parent="." unique_id=1100354882]
 mesh = SubResource("ArrayMesh_fbcrc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=365795959]
+transform = Transform3D(1.2422053, 0, 0, 0, 1.2422053, 7.1054274e-15, 0, -7.1054274e-15, 1.2422053, 0, -0.24844106, -1.0859703e-08)
