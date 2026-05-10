@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chu80r5ddr7p5"]
 
-[ext_resource type="PackedScene" uid="uid://cj5jt8llwcyr2" path="res://assets/player.tscn" id="1_wse8f"]
-[ext_resource type="PackedScene" uid="uid://c56q6s8k2uk3g" path="res://assets/enemy.tscn" id="2_gbfbk"]
+[ext_resource type="PackedScene" path="res://assets/player.tscn" id="1_wse8f"]
+[ext_resource type="PackedScene" uid="uid://crm5uxlc1okbj" path="res://assets/enemy.tscn" id="2_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://b7jvp5a3fonf4" path="res://assets/terrain/floor.tscn" id="3_ioo17"]
 [ext_resource type="AudioStream" uid="uid://dx0oaymgff3vw" path="res://assets/sounds/joe-001.wav" id="3_mc2jv"]
 [ext_resource type="AudioStream" uid="uid://bqbkcekspq82v" path="res://assets/sounds/joe-003.wav" id="4_bo7i5"]
@@ -25,16 +25,11 @@
 [ext_resource type="PackedScene" uid="uid://dhqa5nroyh56d" path="res://assets/officeStuff/blueFridge.tscn" id="20_26xuy"]
 [ext_resource type="PackedScene" uid="uid://djhkr5ucrijis" path="res://assets/officeStuff/exitSign.tscn" id="21_bc84e"]
 [ext_resource type="PackedScene" uid="uid://c4lx0lljwhigv" path="res://assets/officeStuff/cabinStorage.tscn" id="22_wukud"]
-[ext_resource type="PackedScene" uid="uid://ctafu74inve6v" path="res://assets/reciept_spawner.tscn" id="26_bo7i5"]
+[ext_resource type="PackedScene" path="res://assets/reciept_spawner.tscn" id="26_bo7i5"]
 
 [sub_resource type="Environment" id="Environment_a202f"]
 sdfgi_enabled = true
 sdfgi_use_occlusion = true
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o3ebs"]
-streams_count = 2
-stream_0/stream = ExtResource("3_mc2jv")
-stream_1/stream = ExtResource("4_bo7i5")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wjb0r"]
 streams_count = 3
@@ -48,6 +43,11 @@ stream_0/stream = ExtResource("16_bc84e")
 stream_1/stream = ExtResource("17_wukud")
 stream_2/stream = ExtResource("18_il2jm")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o3ebs"]
+streams_count = 2
+stream_0/stream = ExtResource("3_mc2jv")
+stream_1/stream = ExtResource("4_bo7i5")
+
 [node name="Node3D" type="Node3D" unique_id=1070173309]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1523260978]
@@ -58,29 +58,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2178957, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1585581584]
 transform = Transform3D(1, 0, 0, 0, 0.051795617, 0.9986577, 0, -0.9986577, 0.051795617, 0, 2.2397714, 0)
-
-[node name="Enemy" parent="." unique_id=503778989 instance=ExtResource("2_gbfbk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7977533, 1.0224121, 1.7697182)
-
-[node name="JoeDetect" type="AudioStreamPlayer3D" parent="Enemy" unique_id=1418142414]
-stream = SubResource("AudioStreamRandomizer_o3ebs")
-
-[node name="JoeAmbient" type="AudioStreamPlayer3D" parent="Enemy" unique_id=463578165]
-stream = ExtResource("5_4h6ng")
-
-[node name="Waypoints" type="Node" parent="Enemy" unique_id=511727509]
-
-[node name="Node3D" type="Node3D" parent="Enemy/Waypoints" unique_id=706533113]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.672925, 1.3137236, 0.38210106)
-
-[node name="Node3D4" type="Node3D" parent="Enemy/Waypoints" unique_id=1629817355]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 11)
-
-[node name="Node3D2" type="Node3D" parent="Enemy/Waypoints" unique_id=1447418740]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1250372, 21.582481)
-
-[node name="Node3D3" type="Node3D" parent="Enemy/Waypoints" unique_id=11265917]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.087643, 0.58281136, 20.281563)
 
 [node name="floor" parent="." unique_id=14097517 instance=ExtResource("3_ioo17")]
 
@@ -291,22 +268,22 @@ transform = Transform3D(0.0130448, 0.23194346, 1.013857e-08, 0, -1.0154592e-08, 
 [node name="reciept" parent="." unique_id=2079881988 instance=ExtResource("7_pkg7o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9243152, 1.7572684, 0.41137087)
 
-[node name="Node" type="Node" parent="." unique_id=1458744958]
+[node name="MusicPlayer" type="Node" parent="." unique_id=1458744958]
 script = ExtResource("8_ioo17")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node" unique_id=2114996157]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer" unique_id=2114996157]
 stream = ExtResource("9_wse8f")
 autoplay = true
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Node" unique_id=1816693046]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="MusicPlayer" unique_id=1816693046]
 stream = ExtResource("10_wse8f")
 volume_db = -80.0
 autoplay = true
 
-[node name="RipPlayer" type="AudioStreamPlayer" parent="Node" unique_id=1760807976]
+[node name="RipPlayer" type="AudioStreamPlayer" parent="MusicPlayer" unique_id=1760807976]
 stream = SubResource("AudioStreamRandomizer_wjb0r")
 
-[node name="ClampPlayer" type="AudioStreamPlayer" parent="Node" unique_id=1725008076]
+[node name="ClampPlayer" type="AudioStreamPlayer" parent="MusicPlayer" unique_id=1725008076]
 stream = SubResource("AudioStreamRandomizer_mc2jv")
 
 [node name="reciept2" parent="." unique_id=899130906 instance=ExtResource("7_pkg7o")]
@@ -651,3 +628,26 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.2
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.2140634, -0.3009565, -7.368312)
 
 [node name="RecieptSpawner" parent="." unique_id=1004346131 instance=ExtResource("26_bo7i5")]
+
+[node name="Enemy" parent="RecieptSpawner" unique_id=503778989 instance=ExtResource("2_gbfbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7977533, 1.0224121, 1.7697182)
+
+[node name="JoeDetect" type="AudioStreamPlayer3D" parent="RecieptSpawner/Enemy" unique_id=1418142414]
+stream = SubResource("AudioStreamRandomizer_o3ebs")
+
+[node name="JoeAmbient" type="AudioStreamPlayer3D" parent="RecieptSpawner/Enemy" unique_id=463578165]
+stream = ExtResource("5_4h6ng")
+
+[node name="Waypoints" type="Node" parent="RecieptSpawner/Enemy" unique_id=511727509]
+
+[node name="Node3D" type="Node3D" parent="RecieptSpawner/Enemy/Waypoints" unique_id=706533113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.672925, 1.3137236, 0.38210106)
+
+[node name="Node3D4" type="Node3D" parent="RecieptSpawner/Enemy/Waypoints" unique_id=1629817355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 11)
+
+[node name="Node3D2" type="Node3D" parent="RecieptSpawner/Enemy/Waypoints" unique_id=1447418740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1250372, 21.582481)
+
+[node name="Node3D3" type="Node3D" parent="RecieptSpawner/Enemy/Waypoints" unique_id=11265917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.087643, 0.58281136, 20.281563)

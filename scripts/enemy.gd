@@ -1,7 +1,8 @@
 extends CharacterBody3D
 
-@onready var music_player: Node = $"../Node"
 @onready var waypoints: Node = $Waypoints
+@onready var music_player: Node = $"../../MusicPlayer"
+
 var currentWayPoint := -1;
 @onready var joe_detect: AudioStreamPlayer3D = $JoeDetect
 @onready var joe_ambient: AudioStreamPlayer3D = $JoeAmbient
