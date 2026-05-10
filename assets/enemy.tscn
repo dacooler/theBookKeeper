@@ -9,8 +9,8 @@
 radius = 0.28710938
 height = 2.01865
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_noarx"]
-radius = 2.2718246
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nyjvj"]
+points = PackedVector3Array(-4, 0, -2, -4, 0, 2, 10, 0, 8, 10, 0, -8)
 
 [sub_resource type="PrismMesh" id="PrismMesh_a0tk4"]
 
@@ -31,7 +31,7 @@ script = ExtResource("3_epg4t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1210237451]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3098686, 0, -0.08470082)
-shape = SubResource("SphereShape3D_noarx")
+shape = SubResource("ConvexPolygonShape3D_nyjvj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=461883185]
 transform = Transform3D(-0.040391702, -3.8265305, 0.0019328698, -0.13493674, 0.009852756, 1.0620496, -2.676115, 0.057258636, -0.053580455, 0.9410105, 0, -0.09748173)

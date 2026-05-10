@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chu80r5ddr7p5"]
 
-[ext_resource type="PackedScene" path="res://assets/player.tscn" id="1_wse8f"]
-[ext_resource type="PackedScene" uid="uid://crm5uxlc1okbj" path="res://assets/enemy.tscn" id="2_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://cj5jt8llwcyr2" path="res://assets/player.tscn" id="1_wse8f"]
+[ext_resource type="PackedScene" uid="uid://c56q6s8k2uk3g" path="res://assets/enemy.tscn" id="2_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://b7jvp5a3fonf4" path="res://assets/terrain/floor.tscn" id="3_ioo17"]
 [ext_resource type="PackedScene" uid="uid://s5dq3q38txw" path="res://assets/officeStuff/plant.tscn" id="4_wse8f"]
 [ext_resource type="PackedScene" uid="uid://da7niy6mlgwe7" path="res://assets/terrain/wall_1.tscn" id="5_ic0uy"]
@@ -54,14 +54,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7977533, 1.0224121, 1.7697
 [node name="Node3D" type="Node3D" parent="Enemy/Waypoints" unique_id=706533113]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.672925, 1.3137236, 0.38210106)
 
+[node name="Node3D4" type="Node3D" parent="Enemy/Waypoints" unique_id=1629817355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 11)
+
 [node name="Node3D2" type="Node3D" parent="Enemy/Waypoints" unique_id=1447418740]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1250372, 21.582481)
 
 [node name="Node3D3" type="Node3D" parent="Enemy/Waypoints" unique_id=11265917]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.087643, 0.58281136, 20.281563)
-
-[node name="Node3D4" type="Node3D" parent="Enemy/Waypoints" unique_id=1629817355]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 11)
 
 [node name="floor" parent="." unique_id=14097517 instance=ExtResource("3_ioo17")]
 

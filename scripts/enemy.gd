@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var music_player: Node = $"../Node"
 @onready var waypoints: Node = $Waypoints
+var currentWayPoint := -1;
 
 enum EnemyState {
 	IDLE,
@@ -57,7 +58,7 @@ func _process_walking():
 		_start_ideling();
 
 func _process_chasing():
-	const CHASING_RANGE := 10.0;
+	const CHASING_RANGE := 14.0;
 	if (position.distance_to(chasingTarget.position) > CHASING_RANGE):
 		_start_ideling();
 		music_player.lowIntense();
@@ -74,7 +75,8 @@ func _start_ideling():
 func _start_turning():
 	while true:
 		var points := waypoints.get_children();
-		movementTarget = points[rng.randi_range(0, points.size() - 1)].position;
+		currentWayPoint = (currentWayPoint + 1) % points.size();
+		movementTarget = points[currentWayPoint].position;
 		if (movementTarget.distance_to(position) > 0.1):
 			break;
 	rotationTarget = (movementTarget - position);

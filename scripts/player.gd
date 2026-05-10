@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const SPEED = 20.0
+const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
 const mouse_sensitivity = 0.002
 
@@ -58,9 +58,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		acceleration += Vector3.UP * get_gravity();
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	# Don't Handle jump.
+	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	#	velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
