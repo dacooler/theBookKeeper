@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dynmbv6x4gak6"]
+
+[ext_resource type="Texture2D" uid="uid://b1u8hvs2q2ha3" path="res://assets/poster2.png" id="1_dxlq8"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_hmuoj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0s54p"]
+albedo_texture = ExtResource("1_dxlq8")
+
+[node name="Poster2" type="Node3D" unique_id=374534634]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=494911699]
+transform = Transform3D(0.6068257, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_hmuoj")
+surface_material_override/0 = SubResource("StandardMaterial3D_0s54p")

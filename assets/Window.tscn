@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://crmqcyfdbj1r5"]
+
+[ext_resource type="Texture2D" uid="uid://omwutegdc1al" path="res://assets/window.webp" id="1_saige"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_j1568"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0hp8"]
+albedo_texture = ExtResource("1_saige")
+
+[node name="Window" type="MeshInstance3D" unique_id=779136988]
+transform = Transform3D(2.149932, 0, 0, 0, 1.9199643, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_j1568")
+surface_material_override/0 = SubResource("StandardMaterial3D_m0hp8")
