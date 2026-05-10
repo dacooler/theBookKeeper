@@ -1,7 +1,11 @@
-[gd_scene format=3 uid="uid://cj5jt8llwcyr2"]
+[gd_scene format=3 uid="uid://1yff3i2k4c65"]
 
 [ext_resource type="Script" uid="uid://d4fsqvo6kkhd4" path="res://scripts/player.gd" id="1_674bt"]
 [ext_resource type="Texture2D" uid="uid://dxtvg3kh2tjco" path="res://assets/folder.png" id="2_3mip4"]
+[ext_resource type="AudioStream" uid="uid://bbk1rdpe43db7" path="res://assets/sounds/bookkeeper-001.wav" id="4_uovkd"]
+[ext_resource type="AudioStream" uid="uid://bynmtdxcfcybv" path="res://assets/sounds/bookkeeper-005.wav" id="5_jeibo"]
+[ext_resource type="AudioStream" uid="uid://csvjqei5bkm0j" path="res://assets/sounds/bookkeeper-003.wav" id="6_cn88q"]
+[ext_resource type="AudioStream" uid="uid://dsxtc32b0unpy" path="res://assets/sounds/bookkeeper-006.wav" id="7_nknpd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
 
@@ -10,6 +14,16 @@ transparency = 1
 albedo_texture = ExtResource("2_3mip4")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rug40"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7rrun"]
+streams_count = 2
+stream_0/stream = ExtResource("4_uovkd")
+stream_1/stream = ExtResource("5_jeibo")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ah73p"]
+streams_count = 2
+stream_0/stream = ExtResource("6_cn88q")
+stream_1/stream = ExtResource("7_nknpd")
 
 [node name="Player" type="CharacterBody3D" unique_id=1466024363 groups=["player"]]
 script = ExtResource("1_674bt")
@@ -24,3 +38,9 @@ shape = SubResource("CapsuleShape3D_noarx")
 transform = Transform3D(0.585, 0, 0, 0, 0.63862014, -0.2693328, 0, 0.7695222, 0.22351703, 0, -0.15382582, -0.53882194)
 material_override = SubResource("StandardMaterial3D_insbl")
 mesh = SubResource("PlaneMesh_rug40")
+
+[node name="BookReceipt" type="AudioStreamPlayer" parent="." unique_id=1276765560]
+stream = SubResource("AudioStreamRandomizer_7rrun")
+
+[node name="BookDash" type="AudioStreamPlayer" parent="." unique_id=781611798]
+stream = SubResource("AudioStreamRandomizer_ah73p")

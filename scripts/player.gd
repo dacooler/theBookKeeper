@@ -8,6 +8,8 @@ var yaw = 0.0
 var pitch = 0.
 var receipts := 0;
 var acceleration := Vector3.ZERO;
+@onready var book_receipt: AudioStreamPlayer = $BookReceipt
+@onready var book_dash: AudioStreamPlayer = $BookDash
 
 @onready var camera = $Camera3D
 @onready var folder: MeshInstance3D = $folder
@@ -24,6 +26,8 @@ func collect_recipt():
 	receipts_in_folder.append(receipt);
 
 	var rng := RandomNumberGenerator.new();
+	if (rng.randi_range(0, 3) == 1):
+		book_receipt.play()
 	receipt.position.y += .01 * receipts_in_folder.size();
 	receipt.position.x += rng.randf_range(-0.7, 0.9);
 	receipt.position.z += rng.randf_range(-0.3, 0.3);
@@ -36,6 +40,9 @@ func kill():
 
 func use_recipt():
 	rip_player.play()
+	var rng := RandomNumberGenerator.new()
+	if (rng.randi_range(0, 3) == 1):
+		book_dash.play()
 	receipts -= 1;
 	if receipts < 0:
 		print_debug("Lost!");
