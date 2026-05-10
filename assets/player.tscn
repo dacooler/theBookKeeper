@@ -41,6 +41,8 @@ mesh = SubResource("PlaneMesh_rug40")
 
 [node name="BookReceipt" type="AudioStreamPlayer" parent="." unique_id=1276765560]
 stream = SubResource("AudioStreamRandomizer_7rrun")
+volume_db = 5.958
 
 [node name="BookDash" type="AudioStreamPlayer" parent="." unique_id=781611798]
 stream = SubResource("AudioStreamRandomizer_ah73p")
+volume_db = 5.958
