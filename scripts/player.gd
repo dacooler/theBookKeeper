@@ -19,10 +19,11 @@ var acceleration := Vector3.ZERO;
 const RECEIPT_FOR_FOLDER = preload("res://assets/receipt_for_folder.tscn")
 var receipts_in_folder: Array[Node3D] = [];
 
-func collect_recipt():
+func collect_recipt(material: Material):
 	receipts += 1;
 	score += 1;
-	var receipt: Node3D = RECEIPT_FOR_FOLDER.instantiate();
+	var receipt: MeshInstance3D = RECEIPT_FOR_FOLDER.instantiate();
+	receipt.material_override = material;
 	folder.add_child(receipt);
 	clamp_player.play()
 	receipts_in_folder.append(receipt);
