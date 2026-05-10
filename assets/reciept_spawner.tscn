@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ctafu74inve6v"]
+
+[ext_resource type="Script" uid="uid://dlvjenxqwfjn1" path="res://receipt_spawner.gd" id="1_pgnj7"]
+
+[node name="RecieptSpawner" type="Node3D" unique_id=1004346131]
+script = ExtResource("1_pgnj7")
