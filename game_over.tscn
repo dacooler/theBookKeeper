@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://ddyp8crfs7fxr"]
 
-[ext_resource type="Script" path="res://scripts/restartbutton.gd" id="1_y26ei"]
+[ext_resource type="Script" uid="uid://dld8eufc8vw06" path="res://scripts/game_over_screen.gd" id="1_ccer4"]
+[ext_resource type="Script" uid="uid://7ob8kf02rf85" path="res://scripts/restartbutton.gd" id="1_y26ei"]
 [ext_resource type="AudioStream" uid="uid://bcodrko78mk42" path="res://assets/sounds/BookKeeper-Death.wav" id="2_yxx3c"]
 
-[node name="GameOver" type="Node2D" unique_id=573527556]
+[node name="GameOver" type="Control" unique_id=2134804792]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ccer4")
 
 [node name="Button" type="Button" parent="." unique_id=1370266428]
+layout_mode = 0
 offset_left = 529.0
 offset_top = 260.0
 offset_right = 594.0
@@ -14,11 +19,31 @@ text = "Restart"
 script = ExtResource("1_y26ei")
 
 [node name="Label" type="Label" parent="." unique_id=1970852858]
+layout_mode = 0
 offset_left = 481.0
 offset_top = 208.0
 offset_right = 647.0
 offset_bottom = 231.0
-text = "You Lost! Game Over!"
+text = "You Lost! Game Over!
+Your score:"
+
+[node name="score" type="Label" parent="." unique_id=545587592]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 235.0
+offset_right = 647.0
+offset_bottom = 258.0
+size_flags_horizontal = 0
+text = "0"
+
+[node name="highscores" type="Label" parent="." unique_id=481163490]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 41.0
+offset_right = 138.0
+offset_bottom = 90.0
+text = "Highscores:
+"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1725190760]
 stream = ExtResource("2_yxx3c")

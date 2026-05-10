@@ -7,6 +7,7 @@ const mouse_sensitivity = 0.002
 var yaw = 0.0
 var pitch = 0.
 var receipts := 0;
+var score := 0;
 var acceleration := Vector3.ZERO;
 @onready var book_receipt: AudioStreamPlayer = $BookReceipt
 @onready var book_dash: AudioStreamPlayer = $BookDash
@@ -20,6 +21,7 @@ var receipts_in_folder: Array[Node3D] = [];
 
 func collect_recipt():
 	receipts += 1;
+	score += 1;
 	var receipt: Node3D = RECEIPT_FOR_FOLDER.instantiate();
 	folder.add_child(receipt);
 	clamp_player.play()
@@ -33,6 +35,7 @@ func collect_recipt():
 	receipt.position.z += rng.randf_range(-0.3, 0.3);
 
 func kill():
+	Global.submit_score(score);
 	print_debug("Lost!");
 	# Lose game
 	get_tree().change_scene_to_file("res://game_over.tscn");
