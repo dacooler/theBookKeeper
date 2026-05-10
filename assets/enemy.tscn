@@ -5,6 +5,9 @@
 [ext_resource type="Script" uid="uid://be5jomikuna1m" path="res://scripts/enemy_vission.gd" id="3_epg4t"]
 [ext_resource type="PackedScene" uid="uid://yyu6gbwyt4fm" path="res://assets/officeStuff/mug.tscn" id="4_iifgy"]
 [ext_resource type="Script" uid="uid://ca7xrvs6wv0no" path="res://scripts/enemy_throw.gd" id="5_4lsqg"]
+[ext_resource type="AudioStream" uid="uid://dx0oaymgff3vw" path="res://assets/sounds/joe-001.wav" id="6_npimb"]
+[ext_resource type="AudioStream" uid="uid://bqbkcekspq82v" path="res://assets/sounds/joe-003.wav" id="7_b3050"]
+[ext_resource type="AudioStream" uid="uid://biyx1lninygqb" path="res://assets/sounds/joe-002.wav" id="8_fpuwb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r3fl7"]
 radius = 0.28710938
@@ -16,6 +19,11 @@ points = PackedVector3Array(-4, 0, -2, -4, 0, 2, 10, 0, 8, 10, 0, -8)
 [sub_resource type="PrismMesh" id="PrismMesh_a0tk4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_edavc"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_l6p6t"]
+streams_count = 2
+stream_0/stream = ExtResource("6_npimb")
+stream_1/stream = ExtResource("7_b3050")
 
 [node name="Enemy" type="CharacterBody3D" unique_id=503778989]
 script = ExtResource("1_qi2p4")
@@ -50,6 +58,12 @@ script = ExtResource("5_4lsqg")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="throwArea" unique_id=758761527]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9061971)
 shape = SubResource("BoxShape3D_edavc")
+
+[node name="JoeDetect" type="AudioStreamPlayer3D" parent="." unique_id=95805566]
+stream = SubResource("AudioStreamRandomizer_l6p6t")
+
+[node name="JoeAmbient" type="AudioStreamPlayer3D" parent="." unique_id=344334546]
+stream = ExtResource("8_fpuwb")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="throwArea" to="throwArea" method="_on_body_entered"]
