@@ -684,6 +684,6 @@ mesh = SubResource("ArrayMesh_lk27s")
 [node name="Cylinder_001_4" type="MeshInstance3D" parent="Cylinder_001" unique_id=673388372]
 mesh = SubResource("ArrayMesh_lk0r3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=602721459]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=602721459 groups=["throw"]]
 transform = Transform3D(1, 0, 0, 0, 0.99999964, -7.1054274e-15, 0, 7.1054274e-15, 0.99999964, 1.2778203, -0.6883144, 1.105743)
 shape = SubResource("BoxShape3D_gvtk1")

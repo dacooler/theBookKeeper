@@ -155,7 +155,6 @@ transform = Transform3D(3.2509423e-08, 0, -0.1, 0, 4, 0, -0.7437289, 0, -4.37113
 
 [node name="roof" parent="." unique_id=312619683 instance=ExtResource("6_k3n1d")]
 transform = Transform3D(200, 0, 0, 0, 0.1, 0, 0, 0, 200, -12.274902, 3.633048, -1.4961123)
-visible = false
 
 [node name="Node3D" type="Node3D" parent="." unique_id=676537696]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5870378, -0.3523183, -1.3650181)
