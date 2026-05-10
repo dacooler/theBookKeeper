@@ -3,7 +3,10 @@
 [ext_resource type="PackedScene" path="res://assets/player.tscn" id="1_wse8f"]
 [ext_resource type="PackedScene" uid="uid://crm5uxlc1okbj" path="res://assets/enemy.tscn" id="2_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://b7jvp5a3fonf4" path="res://assets/terrain/floor.tscn" id="3_ioo17"]
+[ext_resource type="AudioStream" uid="uid://dx0oaymgff3vw" path="res://assets/sounds/joe-001.wav" id="3_mc2jv"]
+[ext_resource type="AudioStream" uid="uid://bqbkcekspq82v" path="res://assets/sounds/joe-003.wav" id="4_bo7i5"]
 [ext_resource type="PackedScene" uid="uid://s5dq3q38txw" path="res://assets/officeStuff/plant.tscn" id="4_wse8f"]
+[ext_resource type="AudioStream" uid="uid://biyx1lninygqb" path="res://assets/sounds/joe-002.wav" id="5_4h6ng"]
 [ext_resource type="PackedScene" uid="uid://da7niy6mlgwe7" path="res://assets/terrain/wall_1.tscn" id="5_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://dou55ei6jwos7" path="res://assets/terrain/roof.tscn" id="6_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://dtlxe04ciw2nh" path="res://assets/officeStuff/deskWithStuff.tscn" id="7_ic0uy"]
@@ -26,6 +29,11 @@
 [sub_resource type="Environment" id="Environment_a202f"]
 sdfgi_enabled = true
 sdfgi_use_occlusion = true
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o3ebs"]
+streams_count = 2
+stream_0/stream = ExtResource("3_mc2jv")
+stream_1/stream = ExtResource("4_bo7i5")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wjb0r"]
 streams_count = 3
@@ -52,6 +60,12 @@ transform = Transform3D(1, 0, 0, 0, 0.051795617, 0.9986577, 0, -0.9986577, 0.051
 
 [node name="Enemy" parent="." unique_id=503778989 instance=ExtResource("2_gbfbk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7977533, 1.0224121, 1.7697182)
+
+[node name="JoeDetect" type="AudioStreamPlayer3D" parent="Enemy" unique_id=1418142414]
+stream = SubResource("AudioStreamRandomizer_o3ebs")
+
+[node name="JoeAmbient" type="AudioStreamPlayer3D" parent="Enemy" unique_id=463578165]
+stream = ExtResource("5_4h6ng")
 
 [node name="Waypoints" type="Node" parent="Enemy" unique_id=511727509]
 

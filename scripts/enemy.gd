@@ -3,6 +3,8 @@ extends CharacterBody3D
 @onready var music_player: Node = $"../Node"
 @onready var waypoints: Node = $Waypoints
 var currentWayPoint := -1;
+@onready var joe_detect: AudioStreamPlayer3D = $JoeDetect
+@onready var joe_ambient: AudioStreamPlayer3D = $JoeAmbient
 
 enum EnemyState {
 	IDLE,
@@ -40,6 +42,8 @@ func _process(delta):
 		stateTimer = 1;
 
 func _process_idle():
+	if (rng.randi_range(0, 10000)) == 1:
+		joe_ambient.play()
 	movementTarget = position;
 	if (stateTimer < 0):
 		_start_turning();
@@ -89,6 +93,7 @@ func _start_walking():
 
 func _start_chasing(body):
 	chasingTarget = body;
+	joe_detect.play()
 	music_player.highIntense();
 	state = EnemyState.CHASING;
 	snapshotPosition = position;
