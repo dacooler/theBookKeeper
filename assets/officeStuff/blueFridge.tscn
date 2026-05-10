@@ -1,5 +1,8 @@
 [gd_scene format=4 uid="uid://dhqa5nroyh56d"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_gvtk1"]
+size = Vector3(0.81225586, 0.5802002, 2.187683)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_plw6m"]
 resource_name = "Material.034"
 cull_mode = 2
@@ -618,7 +621,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2j1hm")
 
-[node name="Node3D6" type="Node3D" unique_id=1306699799]
+[node name="Blue Fridge" type="Node3D" unique_id=1306699799]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1380012889]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=602721459]
+transform = Transform3D(1, 0, 0, 0, 0.9999998, -3.5527137e-15, 0, 3.5527137e-15, 0.9999998, 1.2778203, -0.6883144, 1.1057432)
+shape = SubResource("BoxShape3D_gvtk1")
 
 [node name="Cube_000" type="Node3D" parent="." unique_id=515197622]
 transform = Transform3D(-0.40446, 0, 0, 0, -0.40446, 0, 0, 0, 0.40446, 1.25841, -0.83725, 0.52419)

@@ -1,5 +1,8 @@
 [gd_scene format=4 uid="uid://ynptd42m7fbq"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_vipbg"]
+size = Vector3(2.8358765, 2.5494385, 4.1517944)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_plw6m"]
 resource_name = "Material.034"
 cull_mode = 2
@@ -235,7 +238,14 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u2gni")
 
 [node name="Cube_021" type="Node3D" unique_id=1119036752]
-transform = Transform3D(0.17732, -0.33757, 0, 0.33757, 0.17732, 0, 0, 0, 0.38131, 0, 0, 0)
+transform = Transform3D(0.38130814, 0, 0, 0, -1.6667508e-08, 0.38131, 0, -0.38130814, -1.6667588e-08, 0, 0, 0.8425474)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1852340408]
+transform = Transform3D(0.99999976, -8.940697e-08, 3.5527137e-15, 8.940697e-08, 0.99999976, 3.5527137e-15, -7.1054274e-15, -5.3290705e-15, 0.9999997, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1973277338]
+transform = Transform3D(1.0000001, 2.980233e-08, 3.5525273e-15, -2.980233e-08, 1.0000001, -2.110312e-12, -3.5527122e-15, 1.0658141e-14, 1.0000001, 0.23623647, -0.13836479, 1.2394105)
+shape = SubResource("BoxShape3D_vipbg")
 
 [node name="Cube_021_0" type="MeshInstance3D" parent="." unique_id=309475451]
 mesh = SubResource("ArrayMesh_3qvwo")
