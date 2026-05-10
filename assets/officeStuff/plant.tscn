@@ -124,7 +124,7 @@ shadow_mesh = SubResource("ArrayMesh_4mme7")
 height = 1.8933411
 radius = 1.0864258
 
-[node name="plant" type="RigidBody3D" unique_id=1210041618]
+[node name="plant" type="RigidBody3D" unique_id=1210041618 groups=["throw"]]
 transform = Transform3D(0.18058999, 0.13351999, 0, 5.8363443e-09, -7.893839e-09, 0.22458999, 0.13351999, -0.18058999, -9.81714e-09, 0, 0, 0)
 
 [node name="Cylinder_003_0" type="MeshInstance3D" parent="." unique_id=2041195677]

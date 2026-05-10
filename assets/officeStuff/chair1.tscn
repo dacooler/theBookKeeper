@@ -237,7 +237,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u2gni")
 
-[node name="Cube_021" type="RigidBody3D" unique_id=806528307]
+[node name="Cube_021" type="RigidBody3D" unique_id=806528307 groups=["throw"]]
 transform = Transform3D(0.38130814, 0, 0, 0, -1.6667508e-08, 0.38131, 0, -0.38130814, -1.6667588e-08, 0, 0, 0.8425474)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1973277338]
