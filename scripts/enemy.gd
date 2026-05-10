@@ -64,6 +64,7 @@ func _process_walking():
 
 func _process_chasing():
 	const CHASING_RANGE := 14.0;
+	music_player.highIntense()
 	if (position.distance_to(chasingTarget.position) > CHASING_RANGE):
 		_start_ideling();
 		music_player.lowIntense();
